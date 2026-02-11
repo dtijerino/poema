@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema - Ética del Educador (Grupo 4)</title>
+    <style>
+        /* Fuentes elegantes */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+        :root {
+            /* Paleta de colores oscura y dramática */
+            --bg-color: #121212; /* Negro casi puro */
+            --container-bg: #1e272e; /* Azul oscuro profundo */
+            --primary-gold: #d4af37; /* Dorado metálico */
+            --text-cream: #f1f2f6; /* Blanco crema para lectura */
+            --accent-red: #c0392b; /* Un toque rojo para la "sangre y piel" */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--text-cream);
+        }
+
+        .document-container {
+            background-color: var(--container-bg);
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            position: relative;
+            padding: 60px;
+            border: 2px solid var(--primary-gold);
+            border-radius: 8px;
+        }
+
+        /* Diseño de la Portada */
+        header {
+            text-align: center;
+            border-bottom: 3px double var(--primary-gold);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .logo-container {
+            background-color: #fff; /* Fondo blanco para que el logo resalte */
+            padding: 10px;
+            display: inline-block;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .logo-placeholder {
+            width: 160px;
+            height: auto;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin: 15px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-cream);
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+
+        .course-info {
+            margin-top: 25px;
+            font-weight: 600;
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+        }
+
+        .main-title {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            color: var(--text-cream);
+            margin-top: 35px;
+            font-weight: bold;
+            font-style: italic;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 20px;
+        }
+
+        /* Sección de Autores - Oscura */
+        .meta-data {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+            font-size: 0.95rem;
+            color: var(--text-cream);
+            text-align: left;
+            border: 1px solid var(--primary-gold);
+            padding: 20px;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        .meta-column strong {
+            display: block;
+            color: var(--primary-gold);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Estilos del Poema Dramático */
+        .poem-section {
+            text-align: center;
+            padding: 30px 40px;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        .poem-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+        }
+
+        .poem-subtitle {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: var(--text-cream);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .stanza {
+            font-family: 'Lora', serif;
+            font-size: 1.35rem;
+            line-height: 1.9;
+            color: var(--text-cream);
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+        }
+
+        /* Palabras clave resaltadas */
+        .highlight {
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        /* Enfasis en la última estrofa */
+        .stanza.final {
+            font-weight: bold;
+            color: var(--primary-gold);
+            border-top: 2px solid var(--primary-gold);
+            border-bottom: 2px solid var(--primary-gold);
+            padding: 30px 0;
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+        
+        .accent-text {
+            color: var(--accent-red);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: var(--primary-gold);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 25px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            .document-container { padding: 25px; }
+            .meta-data { flex-direction: column; gap: 25px; text-align: center; }
+            h1 { font-size: 1.5rem; }
+            .poem-title { font-size: 1.8rem; }
+            .stanza { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        <header>
+            <div class="logo-container">
+                <img src="https://static.wixstatic.com/media/4bedb4_42f1472fae0c491da2c93bd2fb480d2d~mv2.png" alt="Logo Universidad Castro Carazo" class="logo-placeholder">
+            </div>
+            
+            <h1>Universidad Castro Carazo</h1>
+            <h2>Licenciatura en Ciencias de la Educación con énfasis en Docencia</h2>
+            <div class="course-info">Curso: LD5033 Legislación Educativa</div>
+            
+            <div class="main-title">
+                Tema: ¿Cómo visualiza la sociedad la ética del educador?
+            </div>
+
+            <div class="meta-data">
+                <div class="meta-column" style="text-align: center; width: 100%;">
+                    <strong>Grupo 4</strong>
+                    Elaborado por:<br>
+                    Daniel Tijerino<br>
+                    Keyleen Gamboa
+                </div>
+                <div class="meta-column" style="text-align: center; width: 100%;">
+                    <strong>Docente</strong>
+                    Msc. Hilda María González Barahona
+                </div>
+                <div class="meta-column" style="text-align: center; width: 100%;">
+                    <strong>Fecha</strong>
+                    14 de Febrero, 2026
+                </div>
+            </div>
+        </header>
+
+        <section class="poem-section">
+            <div class="poem-title">El Peso del Ejemplo</div>
+            <div class="poem-subtitle">(Una reflexión colectiva sobre la exigencia social)</div>
+
+            <div class="stanza">
+                Dicen que enseñar es fácil, faena de medio día,<br>
+                pero ignoran la carga que llevamos en la vía.<br>
+                No es solo tiza y pizarra, ni planear la lección,<br>
+                es que afuera del aula... ¡sigue <span class="highlight">nuestra</span> evaluación!
+            </div>
+
+            <div class="stanza">
+                La sociedad no perdona al gremio de doble cara,<br>
+                que habla de rectitud y en la calle se <strong>descara</strong>.<br>
+                <span class="highlight">Nos miran</span> en la cantina, en la fila del mercado,<br>
+                buscando la grieta oscura en el muro blanqueado.
+            </div>
+
+            <div class="stanza">
+                ¡Qué dura es la ética, colegas, qué cruda realidad!<br>
+                Ser luz en la oscuridad y ley en la libertad.<br>
+                Porque el título no es escudo para ocultar el error,<br>
+                si fallamos como personas, fracasamos en la labor.
+            </div>
+
+            <div class="stanza final">
+                No <span class="highlight">nos</span> hablen de teoría, ni de códigos de papel,<br>
+                la ética se escribe con hechos, con <span class="accent-text">sangre</span> y con <span class="accent-text">piel</span>.<br>
+                La gente no escucha el discurso, la gente mira la acción:<br>
+                ¡O somos ejemplo vivo, o somos la decepción!
+            </div>
+        </section>
+
+        <footer>
+            I Cuatrimestre - 2026
+        </footer>
+    </div>
+
+</body>
+</html>
